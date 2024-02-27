@@ -1,6 +1,6 @@
 package com.example.marketapp.domain.entities
 
-data class ListProduct(
+data class Product(
     val category: Category,
     val name: String,
     val details: String,

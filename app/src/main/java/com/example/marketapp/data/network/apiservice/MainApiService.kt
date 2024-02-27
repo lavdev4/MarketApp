@@ -12,10 +12,10 @@ import retrofit2.http.Query
 interface MainApiService {
 
     @GET("/products")
-    fun getProductsPage(
+    suspend fun getProductsPage(
         @Query(QUERY_PARAM_PAGE) page: Int,
         @Query(QUERY_PARAM_PAGE_SIZE) pageSize: Int
-    ): Flow<PagingData<ProductsPageDto>>
+    ): Response<ProductsPageDto>
 
     @GET("/products/{id}")
     suspend fun getProductInfo(

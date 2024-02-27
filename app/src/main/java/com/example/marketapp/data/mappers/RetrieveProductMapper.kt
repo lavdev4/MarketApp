@@ -1,15 +1,15 @@
 package com.example.marketapp.data.mappers
 
 import com.example.marketapp.data.network.models.RetrieveProductDto
-import com.example.marketapp.domain.entities.ListProduct
+import com.example.marketapp.domain.entities.Product
 import javax.inject.Inject
 
 class RetrieveProductMapper @Inject constructor(
     private val categoryMapper: CategoryMapper
-) : DomainMapper<RetrieveProductDto, ListProduct> {
+) : DomainMapper<RetrieveProductDto, Product> {
 
-    override fun mapToDomain(input: RetrieveProductDto): ListProduct {
-        return ListProduct(
+    override fun mapToDomain(input: RetrieveProductDto): Product {
+        return Product(
             category = categoryMapper.mapToDomain(input.category),
             name = input.name,
             details = input.details,
