@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#E5EBE9</color>
+    <color name="cart_button_divider">#E5EBE926</color>
+    <color name="text_gray">#424A56</color>
+    <color name="text_price_blue">#035A97</color>
+    <color name="text_price_gray">#9CB1BC</color>
+    <color name="main_blue">#07195C</color>
+    <color name="cart_button">#623485</color>
+    <color name="cart_button_ripple">#A657E3</color>
+    <color name="favourites_background_active">#FAF0D8</color>
+    <color name="favourites_icon">#E3453A</color>
 </resources>

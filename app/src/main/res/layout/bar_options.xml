@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        android:text="@string/button_filters_text"
+        android:textSize="12sp"
+        android:textColor="@color/main_blue"
+        app:icon="@drawable/icon_filters"
+        app:iconTint="@color/main_blue"
+        app:iconPadding="10dp"
+        style="@style/Widget.Material3.Button.TextButton.Icon"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_space_horizontal_10dp"
+        android:gravity="center_vertical"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:checkedButton="@id/button_list_view">
+
+        <Button
+            android:id="@+id/button_list_view"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            app:cornerRadius="0dp"
+            app:backgroundTint="@color/background_list_view_selector"
+            app:iconTint="@color/icon_list_view_selector"
+            app:icon="@drawable/icon_list_view"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            style="Widget.Material3.Button.IconButton"/>
+
+        <Button
+            android:id="@+id/button_grid_view"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            app:cornerRadius="0dp"
+            app:backgroundTint="@color/background_list_view_selector"
+            app:iconTint="@color/icon_list_view_selector"
+            app:icon="@drawable/icon_grid_view"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            style="Widget.Material3.Button.IconButton"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+</LinearLayout>

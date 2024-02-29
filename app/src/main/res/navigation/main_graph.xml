@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_graph">
+    android:id="@+id/main_graph"
+    app:startDestination="@id/productsListFragment">
 
+    <fragment
+        android:id="@+id/productsListFragment"
+        android:name="com.example.marketapp.presentation.screens.ProductsListFragment"
+        android:label="ProductsListFragment" />
+    <dialog
+        android:id="@+id/errorDialog"
+        android:name="com.example.marketapp.presentation.screens.ErrorDialog"
+        android:label="ErrorDialog" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </dialog>
+    <action android:id="@+id/action_global_errorDialog" app:destination="@id/errorDialog" />
 </navigation>

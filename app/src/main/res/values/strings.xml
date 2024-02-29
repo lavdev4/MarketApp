@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MarketApp</string>
+    <string name="button_filters_text">FILTERS</string>
+    <string name="cart_counter_default_text">0</string>
+    <string name="button_cart_text">MY CART</string>
+    <string name="dialog_network_error_title">Network error</string>
+    <string name="dialog_http_error_message">Code: %1$s. Message: %2$s.</string>
+    <string name="dialog_network_error_message">Network failure. Message: %1$s.</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="dialog_error_message">Message: %1$s.</string>
 </resources>
