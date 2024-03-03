@@ -8,4 +8,8 @@
     <string name="dialog_network_error_message">Network failure. Message: %1$s.</string>
     <string name="dialog_error_title">Error</string>
     <string name="dialog_error_message">Message: %1$s.</string>
+    <string name="button_buy_text">BUY NOW</string>
+    <string name="button_add_to_cart_text">ADD TO CART</string>
+    <string name="section_information_title">INFORMATION</string>
+    <string name="comment_pattern">%1$s %2$s: %3$s</string>
 </resources>

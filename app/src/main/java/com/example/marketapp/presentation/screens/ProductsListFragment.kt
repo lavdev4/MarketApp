@@ -3,7 +3,6 @@ package com.example.marketapp.presentation.screens
 import android.content.Context
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,7 @@ import com.example.marketapp.presentation.adapters.diffutills.ProductsDiffUtil
 import com.example.marketapp.presentation.adapters.viewholders.ProductsViewHolder
 import com.example.marketapp.presentation.states.ScreenState
 import com.example.marketapp.presentation.viewmodels.MainVMFactory
-import com.example.marketapp.presentation.viewmodels.ProductsVM
+import com.example.marketapp.presentation.viewmodels.ProductsScreenVM
 import com.example.marketapp.presentation.viewmodels.ScreenStateVM
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import kotlinx.coroutines.flow.collectLatest
@@ -35,13 +34,16 @@ import javax.inject.Inject
 class ProductsListFragment : Fragment() {
     @Inject lateinit var viewModelFactory: MainVMFactory
     private val screenStateVM by activityViewModels<ScreenStateVM> { viewModelFactory }
-    private val fragmentViewModel by viewModels<ProductsVM> { viewModelFactory }
+    private val fragmentViewModel by viewModels<ProductsScreenVM> { viewModelFactory }
     private var _binding: FragmentProductsListBinding? = null
     private val binding: FragmentProductsListBinding
         get() = _binding ?: throw RuntimeException("FragmentProductsListBinding is null")
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        if (requireActivity() !is MainActivity) {
+            throw RuntimeException("Host activity of ${this::class} can be only ${MainActivity::class}")
+        }
         (requireActivity() as MainActivity).mainActivitySubcomponent.inject(this)
     }
 
@@ -56,7 +58,7 @@ class ProductsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val productsAdapter = setProductsAdapter()
+        val productsAdapter = setupProductsList()
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch { observeProductsLoadState(productsAdapter) }
@@ -70,7 +72,7 @@ class ProductsListFragment : Fragment() {
         _binding = null
     }
 
-    private fun setProductsAdapter(): ProductsListAdapter {
+    private fun setupProductsList(): ProductsListAdapter {
         val dividerDecoration = MaterialDividerItemDecoration(
             requireContext(),
             LinearLayoutManager.VERTICAL
@@ -104,7 +106,6 @@ class ProductsListFragment : Fragment() {
         productsAdapter: PagingDataAdapter<Product, ProductsViewHolder>
     ) {
         productsAdapter.loadStateFlow.collectLatest { state ->
-            Log.d("adapter", state.toString())
             reactToProductsState(state)
         }
     }
@@ -121,7 +122,9 @@ class ProductsListFragment : Fragment() {
     }
 
     private fun navigateToDetails(productId: Int) {
-
+        val direction = ProductsListFragmentDirections
+            .actionProductsListFragmentToProductsDetailFragment(productId)
+        screenStateVM.setScreenState(ScreenState.Navigating(direction))
     }
 
     private fun convertDpToPixel(dp: Float, context: Context): Float {

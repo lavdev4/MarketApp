@@ -2,41 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:contentInsetStart="20dp"
-        android:contentInsetEnd="20dp"
-        android:background="@color/main_blue">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:src="@drawable/icon_user"
-            android:background="@android:color/transparent"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/image_logo"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/icon_favorites"
-            android:background="@android:color/transparent"
-            tools:ignore="ContentDescription" />
-    </Toolbar>
+    <include layout="@layout/toolbar_main"
+        android:id="@+id/toolbar"/>
 
     <FrameLayout
         android:layout_width="match_parent"

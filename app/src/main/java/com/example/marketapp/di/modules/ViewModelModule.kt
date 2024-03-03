@@ -2,7 +2,8 @@ package com.example.marketapp.di.modules
 
 import androidx.lifecycle.ViewModel
 import com.example.marketapp.di.annotations.ViewModelKey
-import com.example.marketapp.presentation.viewmodels.ProductsVM
+import com.example.marketapp.presentation.viewmodels.DetailScreenVM
+import com.example.marketapp.presentation.viewmodels.ProductsScreenVM
 import com.example.marketapp.presentation.viewmodels.ScreenStateVM
 import dagger.Binds
 import dagger.Module
@@ -17,7 +18,12 @@ abstract class ViewModelModule {
     abstract fun bindMainActivitySharedVM(impl: ScreenStateVM): ViewModel
 
     @IntoMap
-    @ViewModelKey(ProductsVM::class)
+    @ViewModelKey(ProductsScreenVM::class)
     @Binds
-    abstract fun bindProductsVM(impl: ProductsVM): ViewModel
+    abstract fun bindProductsScreenVM(impl: ProductsScreenVM): ViewModel
+
+    @IntoMap
+    @ViewModelKey(DetailScreenVM::class)
+    @Binds
+    abstract fun bindDetailScreenVM(impl: DetailScreenVM): ViewModel
 }

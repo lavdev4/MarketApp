@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="17dp"
+    android:paddingVertical="12dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:elevation="20dp">
+
+    <Button
+        android:layout_width="167dp"
+        android:layout_height="41dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="0dp"
+        app:backgroundTint="@color/main_blue"
+        android:text="@string/button_add_to_cart_text"
+        android:textSize="13sp"
+        style="@style/ThemeOverlay.Material3.Button"/>
+
+    <Button
+        android:layout_width="167dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="0dp"
+        app:backgroundTint="@color/buy_button"
+        android:text="@string/button_buy_text"
+        android:textSize="13sp"
+        style="@style/ThemeOverlay.Material3.Button"/>
+</LinearLayout>

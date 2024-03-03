@@ -6,7 +6,7 @@ import androidx.paging.cachedIn
 import com.example.marketapp.domain.usecases.GetProductsUseCase
 import javax.inject.Inject
 
-class ProductsVM @Inject constructor(
+class ProductsScreenVM @Inject constructor(
     getProductsUseCase: GetProductsUseCase
 ) : ViewModel() {
 
