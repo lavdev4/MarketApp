@@ -1,8 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <style name="Base.Theme.MarketApp" parent="Theme.Material3.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/main_blue</item>
-    </style>
-
-    <style name="Theme.MarketApp" parent="Base.Theme.MarketApp" />
-</resources>

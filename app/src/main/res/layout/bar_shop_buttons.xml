@@ -9,13 +9,17 @@
     android:gravity="center"
     android:orientation="horizontal"
     android:background="@color/white"
-    android:elevation="20dp">
+    android:elevation="20dp"
+    android:clipToPadding="false">
 
     <Button
         android:layout_width="167dp"
         android:layout_height="41dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:elevation="15dp"
+        android:stateListAnimator="@null"
+        android:outlineProvider="background"
         app:cornerRadius="0dp"
         app:backgroundTint="@color/main_blue"
         android:text="@string/button_add_to_cart_text"
@@ -28,6 +32,9 @@
         android:layout_marginStart="8dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:elevation="15dp"
+        android:stateListAnimator="@null"
+        android:outlineProvider="background"
         app:cornerRadius="0dp"
         app:backgroundTint="@color/buy_button"
         android:text="@string/button_buy_text"

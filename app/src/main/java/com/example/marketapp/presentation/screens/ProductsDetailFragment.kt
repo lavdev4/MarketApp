@@ -98,19 +98,7 @@ class ProductsDetailFragment : Fragment() {
     }
 
     private fun fillUi(data: ProductDetail) {
-        // TODO: remove
-        val imagesList = if (data.id == 7) {
-            listOf(
-                "https://i.pinimg.com/236x/2a/f5/3d/2af53d8f1be483dd0e05b7b18142c33c.jpg",
-                "https://i.pinimg.com/236x/24/15/21/24152197af38deb718eb730992d441d0.jpg",
-                "https://trikky.ru/wp-content/blogs.dir/1/files/2023/03/23/zyro-image-11.jpg",
-                "https://i.pinimg.com/236x/0e/bd/26/0ebd262c4b7f69f7ec915dbd8509328f.jpg"
-            )
-        } else {
-            data.images.map { it.image }
-        }
-
-
+        val imagesList =  data.images.map { it.image }
         setupImagesList(imagesList)
         setParametersSection(
             title = data.name,
